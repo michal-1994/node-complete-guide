@@ -7,19 +7,23 @@ const server = http.createServer((req, res) => {
 
   if (url === '/') {
     res.write('<html>');
-    res.write('<head><title>Enter message</title></head>');
-    res.write('<body>');
-    res.write('<form action="/message" method="POST">');
-    res.write('<input type="text" /><button type="submit">Send</button>');
-    res.write('</form>');
-    res.write('</body>');
+    res.write('<head><title>Enter Message</title><head>');
+    res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
     res.write('</html>');
 
     return res.end();
   }
 
   if (url === '/message' && method === 'POST') {
-    fs.writeFileSync('message.txt', 'Dummy text');
+    const body = [];
+    req.on('data', (chunk) => {
+      body.push(chunk);
+    });
+    req.on('end', () => {
+      const parsedBody = Buffer.concat(body).toString();
+      const message = parsedBody.split('=')[1];
+      fs.writeFileSync('message.txt', message);
+    });
     res.statusCode = 302;
     res.setHeader('Location', '/');
     return res.end();
@@ -27,8 +31,8 @@ const server = http.createServer((req, res) => {
 
   res.setHeader('Content-Type', 'text/html');
   res.write('<html>');
-  res.write('<head><title>My first page</title></head>');
-  res.write('<body>Hello from my Node.js Server!</body>');
+  res.write('<head><title>My First Page</title><head>');
+  res.write('<body><h1>Hello from my Node.js Server!</h1></body>');
   res.write('</html>');
 
   res.end();
