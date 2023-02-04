@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
