@@ -53,7 +53,7 @@ button {
   border-radius: 2px;
   background-color: white;
   color: #00683d;
-  margin: 1rem 0;
+  margin: 1rem 0; 
 }
 button:hover,
 button:active {
