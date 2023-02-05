@@ -1,29 +1,17 @@
 /** @format */
 
-.form-control label,
-.form-control input {
-  display: block;
-}
-.form-control input {
-  border: 2px solid #00683d;
-  font: inherit;
-  border-radius: 2px;
-}
-button {
-  font: inherit;
-  border: 2px solid #00683d;
-  border-radius: 2px;
-  background-color: white;
-  color: #00683d;
-  margin: 1rem 0;
-}
-button:hover,
-button:active {
-  color: #0e8f5b;
-  border-color: #0e8f5b;
-  cursor: pointer;
-}
-.product-form {
+.product-item {
   width: 20rem;
-  margin: auto;
+  max-width: 95%;
+}
+.product__title {
+  font-size: 1.2rem;
+}
+.product__price {
+  text-align: center;
+  color: #4d4d4d;
+  margin-bottom: 0.5rem;
+}
+.product__description {
+  text-align: center;
 }

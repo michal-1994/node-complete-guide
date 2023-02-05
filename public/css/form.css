@@ -1,0 +1,15 @@
+/** @format */
+
+.form-control label,
+.form-control input {
+  display: block;
+}
+.form-control input {
+  border: 2px solid #00683d;
+  font: inherit;
+  border-radius: 2px;
+}
+.product-form {
+  width: 20rem;
+  margin: auto;
+}
