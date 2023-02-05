@@ -38,30 +38,3 @@ main {
 .main-header__item a.active {
   color: #e6d602;
 }
-.form-control label,
-.form-control input {
-  display: block;
-}
-.form-control input {
-  border: 2px solid #00683d;
-  font: inherit;
-  border-radius: 2px;
-}
-button {
-  font: inherit;
-  border: 2px solid #00683d;
-  border-radius: 2px;
-  background-color: white;
-  color: #00683d;
-  margin: 1rem 0; 
-}
-button:hover,
-button:active {
-  color: #0e8f5b;
-  border-color: #0e8f5b;
-  cursor: pointer;
-}
-.product-form {
-  width: 20rem;
-  margin: auto;
-}
