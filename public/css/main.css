@@ -52,3 +52,9 @@ button:active {
   border-color: #0e8f5b;
   cursor: pointer;
 }
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
