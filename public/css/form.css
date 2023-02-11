@@ -1,13 +1,21 @@
 /** @format */
 
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
+  width: 100%;
+  margin-bottom: 0.25rem;
   display: block;
 }
+.form-control textarea,
 .form-control input {
-  border: 2px solid #00683d;
+  border: 2px solid #a9b4af;
   font: inherit;
   border-radius: 2px;
+}
+.form-control textarea:focus,
+.form-control input:focus {
+  outline-color: #00683d;
 }
 .product-form {
   width: 20rem;
