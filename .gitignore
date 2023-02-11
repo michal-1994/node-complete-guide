@@ -1,3 +1,2 @@
 *.txt
 /node_modules/
-/data/products.json
