@@ -12,6 +12,14 @@
   color: #4d4d4d;
   margin-bottom: 0.5rem;
 }
+.card__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__actions .btn {
+  margin: 0.5rem;
+}
 .card.product-item {
   box-shadow: 2px 2px 10px 0px rgba(66, 68, 90, 1);
   padding: 0.5rem;
@@ -29,4 +37,10 @@
 }
 .product__description {
   text-align: center;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
 }

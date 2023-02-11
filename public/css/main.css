@@ -38,23 +38,20 @@ main {
 .main-header__item a.active {
   color: #e6d602;
 }
-button {
+.btn {
   font: inherit;
   border: 2px solid #00683d;
   border-radius: 2px;
   background-color: white;
   color: #00683d;
   margin: 1rem 0;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
 }
-button:hover,
-button:active {
+.btn:hover,
+.btn:active {
   color: #0e8f5b;
   border-color: #0e8f5b;
   cursor: pointer;
-}
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 10px;
 }
