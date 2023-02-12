@@ -20,7 +20,8 @@ const getProductsFromFile = (cb) => {
 };
 
 module.exports = class Product {
-  constructor(title, imgUrl, description, price) {
+  constructor(id, title, imgUrl, description, price) {
+    this.id = id;
     this.title = title;
     this.imgUrl = imgUrl;
     this.description = description;
@@ -28,12 +29,23 @@ module.exports = class Product {
   }
 
   save() {
-    this.id = new Date().getTime().toString();
     getProductsFromFile((products) => {
-      products.push(this);
-      fs.writeFile(p, JSON.stringify(products), (err) => {
-        console.log(err);
-      });
+      if (this.id) {
+        const existingProductIndex = products.findIndex(
+          (p) => p.id === this.id
+        );
+        const updatedProducts = [...products];
+        updatedProducts[existingProductIndex] = this;
+        fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
+          console.log(err);
+        });
+      } else {
+        this.id = new Date().getTime().toString();
+        products.push(this);
+        fs.writeFile(p, JSON.stringify(products), (err) => {
+          console.log(err);
+        });
+      }
     });
   }
 

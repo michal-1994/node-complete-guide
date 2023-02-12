@@ -21,10 +21,10 @@ router.get("/cart", shopController.getCart);
 // Cart
 router.post("/cart", shopController.postCart);
 
-// Checkout
-router.get("/checkout", shopController.getCheckout);
-
 // Orders
 router.get("/orders", shopController.getOrders);
+
+// Checkout
+router.get("/checkout", shopController.getCheckout);
 
 module.exports = router;
