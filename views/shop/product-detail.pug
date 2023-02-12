@@ -1,1 +1,18 @@
 extends ../layouts/main-layout.pug
+
+block styles
+  link(rel="stylesheet", href="/css/product.css")
+
+block content
+  main
+    h1.product__title #{product.title}
+    hr
+    div
+      div.card__image
+        img(src=product.imgUrl, alt=product.title)
+      div.card__content
+        h2.product__price $#{product.price}
+        p.product__description #{product.description}
+      .card__actions
+        form(action=`/add-to-cart/${product.id}`, method="post")
+        button.btn(type="submit") Add to cart
