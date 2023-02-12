@@ -40,6 +40,7 @@ exports.postCart = (req, res, next) => {
     Cart.addProduct(productId, product.price);
   });
   res.redirect("cart");
+}
 
 exports.getCart = (req, res, next) => {
   res.render("shop/cart", {
